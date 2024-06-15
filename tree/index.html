@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> ztree demo </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="./ztree/zTreeStyle/zTreeStyle.css" type="text/css">
+	<script type="text/javascript" src="./ztree/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="./ztree/jquery.ztree.core.min.js"></script>
+	<script language="javascript">
+		var zTreeObj;
+		var setting = {
+			async: {
+				enable: true,
+				url: "data.json",
+				autoParam: ["id", "name"]
+			},
+			view: {
+				showIcon: false,
+				txtSelectedEnable: true,
+				nameIsHTML: true,
+			},
+			data:{
+				simpleData: {
+					enable: true,
+					idKey: "id",
+					pIdKey: "pid",
+					rootPId: 0
+				}
+			}
+
+		};
+		var zNodes = [
+			{"id":1, "pid":0, "name":"test1"},
+			{"id":11, "pid":1, "name":"test11"},
+			{"id":12, "pid":1, "name":"test12"},
+			{"id":111, "pid":11, "name":"test111"}
+		];
+		
+		$(document).ready(function(){
+		  zTreeObj = $.fn.zTree.init($("#treeDemo"), setting);
+		});
+	</script>
+</head>
+<body>
+<div style="font-size:18px;">
+   <ul id="treeDemo" class="ztree" style=""></ul>
+</div>
+</body>
+</html>

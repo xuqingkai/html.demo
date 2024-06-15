@@ -1,0 +1,6 @@
+[
+	{ id:'01', name:'春敏', isParent:true},
+	{ id:'02', name:'春二', isParent:false},
+	{ id:'03', name:'春三', isParent:true},
+	{ id:'04', name:'春四', isParent:false}
+]
