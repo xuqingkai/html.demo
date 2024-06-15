@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>剪贴板</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<style type="text/css">
+    	#bg{width:100%;height:2500px;background:#ccc;position:absolute;top:0;right:0;bottom:0;left:0;opacity:0.8;}
+    	#alert{border:1px solid #ccc;background:#fff;position:absolute;top:20px;left:20px;right:20px;text-align:center;padding:20px 0;}
+    	#btn{background:#000;border-radius:5px;border:1px solid #00;color:#fff;padding:5px 20px;}
+	</style>
+</head>
+<body>
+	<div id="bg">&nbsp;</div>
+	<div id="alert">
+		金额【1.23】已复制到剪贴板<br /><br />
+		请在付款界面粘贴使用<br /><br />
+		粘贴到合适的地方<br /><br />
+		<button id="btn" data-clipboard-text="1.23">确定</button>
+	</div>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zenorocha/clipboard.js@master/dist/clipboard.min.js"></script>
+	<script>
+		document.getElementById('btn').addEventListener('click', function(){
+			document.getElementById('alert').style.display='none';
+			document.getElementById('bg').style.display='none';
+			new ClipboardJS('#btn');
+		}, false);
+	</script>
+</body>
+</html>
